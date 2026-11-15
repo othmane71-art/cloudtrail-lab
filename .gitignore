@@ -1,0 +1,7 @@
+﻿.env
+data/
+floci-data/
+teacher/
+tmp/
+*.zip
+__pycache__/
