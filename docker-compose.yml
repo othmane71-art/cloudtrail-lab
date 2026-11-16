@@ -1,52 +1,39 @@
-# TP CloudTrail - environnement local et gratuit
+# TP CloudTrail - environnement local et gratuit (emulateur : Floci)
 #
-#   docker compose up -d --build            # démarre LocalStack + conteneur "lab"
-#   docker compose exec lab bash            # ouvre un shell avec AWS CLI + Python
+#   docker compose up -d --build     # demarre Floci + conteneur "lab"
+#   docker compose exec lab bash     # shell avec AWS CLI + Python
 #
-# Plan B (si LocalStack est indisponible) : émulateur "moto" à la place
-#   docker compose --profile backup up -d moto lab    (et mettre LAB_ENDPOINT=http://moto:4566 dans .env)
-#
-# NOTE : CloudTrail n'est PAS émulé par la version gratuite de LocalStack (voir README).
+# NOTE : Floci emule CloudTrail (trails, StartLogging, fichiers .json.gz dans S3).
+#        Ce n'est PAS le vrai service AWS : a mentionner dans le rapport.
 services:
-  localstack:
-    image: ${LOCALSTACK_IMAGE:-localstack/localstack:4.14}
-    container_name: lab-localstack
+  floci:
+    image: ${FLOCI_IMAGE:-floci/floci:latest}
+    container_name: lab-floci
     ports:
-      - "127.0.0.1:4566:4566"            # exposé uniquement sur la machine locale
+      - "127.0.0.1:4566:4566"        # expose uniquement sur la machine locale
     environment:
-      - SERVICES=s3,iam,sts
-      - DEBUG=${LOCALSTACK_DEBUG:-0}
-      - LOCALSTACK_AUTH_TOKEN=${LOCALSTACK_AUTH_TOKEN:-}   # inutile avec le tag 4.14 ; requis pour "latest"
+      - FLOCI_HOSTNAME=floci
+      - FLOCI_STORAGE_MODE=persistent
+      - FLOCI_STORAGE_PERSISTENT_PATH=/app/data
     volumes:
-      - localstack_data:/var/lib/localstack
-    healthcheck:
-      test: ["CMD-SHELL", "curl -sf http://localhost:4566/_localstack/health >/dev/null || exit 1"]
-      interval: 5s
-      timeout: 5s
-      retries: 20
-
-  moto:
-    profiles: ["backup"]
-    image: python:3.12-slim
-    container_name: lab-moto
-    command: sh -c "pip install -q 'moto[server]' && moto_server -H 0.0.0.0 -p 4566"
-    ports:
-      - "127.0.0.1:4567:4566"
+      - floci_data:/app/data
 
   lab:
     build: .
     container_name: lab-shell
     working_dir: /lab
+    depends_on:
+      - floci
     volumes:
       - .:/lab
     environment:
-      - AWS_ACCESS_KEY_ID=test               # identifiants FACTICES : LocalStack accepte n'importe quoi
+      - AWS_ACCESS_KEY_ID=test         # identifiants FACTICES
       - AWS_SECRET_ACCESS_KEY=test
       - AWS_DEFAULT_REGION=${LAB_REGION:-eu-west-3}
       - AWS_PAGER=
-      - LAB_ENDPOINT=${LAB_ENDPOINT:-http://localstack:4566}
-      - AWS_ENDPOINT_URL=${LAB_ENDPOINT:-http://localstack:4566}
+      - LAB_ENDPOINT=${LAB_ENDPOINT:-http://floci:4566}
+      - AWS_ENDPOINT_URL=${LAB_ENDPOINT:-http://floci:4566}
     command: ["sleep", "infinity"]
 
 volumes:
-  localstack_data:
+  floci_data:
