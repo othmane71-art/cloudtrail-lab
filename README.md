@@ -4,6 +4,23 @@ Projet pédagogique de sécurité cloud : collecte, analyse et investigation d�
 
 Auteur : ABIDI Othmane
 
+## Vue d’ensemble de l’architecture
+
+![Architecture du laboratoire CloudTrail avec Floci](docs/images/architecture-floci.png)
+
+Le laboratoire s’exécute localement sous Docker. Le schéma distingue les composants utilisés, les flux de collecte et d’analyse, ainsi que les correspondances conceptuelles avec une architecture AWS de production.
+
+La zone « cible de production » est une proposition d’architecture : elle ne représente pas des services effectivement déployés dans ce projet.
+
+## Manipulations et objectifs du TP
+
+![Manipulations réalisées et objectifs du TP CloudTrail](docs/images/cloudtrail-objectifs.png)
+
+CloudTrail constitue le fil conducteur du TP : comprendre les traces d’appels API, collecter les journaux, corréler les événements et expliquer les actions sensibles.
+
+Les événements synthétiques servent à l’investigation des six scénarios. Les journaux natifs de Floci sont étudiés séparément. Le test IAM local S2 démontre un gain effectif de permissions, mais sa journalisation native n’a pas été confirmée par les preuves examinées.
+
+
 ## Objectifs
 
 - Construire une chronologie à partir d’événements CloudTrail.
