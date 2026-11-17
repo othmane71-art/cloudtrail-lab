@@ -1,0 +1,2 @@
+severity,rule,eventTime,principal,sourceIP,eventName,details,mitre,eventID
+MEDIUM,R09,2026-11-16T17:48:23Z,root,172.20.0.3,HeadObject,"4 événement(s) de root depuis l'IP hors périmètre 172.20.0.3 (2026-11-16T17:48:23Z -> 2026-11-16T17:48:24Z) : GetObjectx2, HeadObjectx1, ListObjectsx1",T1078.004 Valid Accounts: Cloud Accounts,ddc6c285-4630-4b75-94b6-7b7bc8e9bd7e

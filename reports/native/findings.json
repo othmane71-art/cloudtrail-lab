@@ -1,0 +1,23 @@
+[
+  {
+    "rule": "R09",
+    "title": "Activité depuis une IP hors périmètre",
+    "severity": "MEDIUM",
+    "eventID": "ddc6c285-4630-4b75-94b6-7b7bc8e9bd7e",
+    "eventTime": "2026-11-16T17:48:23Z",
+    "eventName": "HeadObject",
+    "principal": "root",
+    "sourceIP": "172.20.0.3",
+    "region": "eu-west-3",
+    "details": "4 événement(s) de root depuis l'IP hors périmètre 172.20.0.3 (2026-11-16T17:48:23Z -> 2026-11-16T17:48:24Z) : GetObjectx2, HeadObjectx1, ListObjectsx1",
+    "mitre": "T1078.004 Valid Accounts: Cloud Accounts",
+    "external_ip": true,
+    "related_eventIDs": [
+      "ddc6c285-4630-4b75-94b6-7b7bc8e9bd7e",
+      "412372b9-bc66-4f81-9ca1-a6b791a9d014",
+      "613389bd-7179-4d75-99a6-b2a8168b262b",
+      "7c599897-f192-4e3f-a232-5f0854c83fab"
+    ],
+    "recommendation": "Vérifier la géolocalisation/ASN, restreindre par condition aws:SourceIp, révoquer les identifiants concernés, enrichir avec une liste d'IP de confiance."
+  }
+]

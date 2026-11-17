@@ -1,0 +1,18 @@
+{
+    "TrailARN": "arn:aws:cloudtrail:eu-west-3:000000000000:trail/corp-trail",
+    "EventSelectors": [
+        {
+            "ReadWriteType": "All",
+            "IncludeManagementEvents": true,
+            "DataResources": [
+                {
+                    "Type": "AWS::S3::Object",
+                    "Values": [
+                        "arn:aws:s3:::corp-finance-secrets/",
+                        "arn:aws:s3:::corp-backups-prod/"
+                    ]
+                }
+            ]
+        }
+    ]
+}

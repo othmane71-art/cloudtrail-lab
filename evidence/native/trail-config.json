@@ -1,0 +1,16 @@
+{
+    "trailList": [
+        {
+            "Name": "corp-trail",
+            "S3BucketName": "corp-cloudtrail-logs-native",
+            "IncludeGlobalServiceEvents": true,
+            "IsMultiRegionTrail": false,
+            "HomeRegion": "eu-west-3",
+            "TrailARN": "arn:aws:cloudtrail:eu-west-3:000000000000:trail/corp-trail",
+            "LogFileValidationEnabled": false,
+            "HasCustomEventSelectors": true,
+            "HasInsightSelectors": false,
+            "IsOrganizationTrail": false
+        }
+    ]
+}
