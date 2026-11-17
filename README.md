@@ -4,6 +4,23 @@ Projet pédagogique de sécurité cloud : collecte, analyse et investigation d�
 
 Auteur : ABIDI Othmane
 
+## Outils et technologies
+
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white)
+![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+
+![Floci](https://img.shields.io/badge/Floci-Emulateur_local-0078D4?style=for-the-badge)
+![AWS CLI](https://img.shields.io/badge/AWS_CLI-API_locales-232F3E?style=for-the-badge)
+![CloudTrail](https://img.shields.io/badge/CloudTrail-Journalisation_emulee-FF9900?style=for-the-badge)
+![S3](https://img.shields.io/badge/S3-Stockage_emule-569A31?style=for-the-badge)
+![IAM](https://img.shields.io/badge/IAM-Autorisations_emulees-DD344C?style=for-the-badge)
+
+Les services AWS sont émulés par Floci : aucun déploiement sur un compte AWS réel n’a été effectué. Les badges sont chargés depuis Shields.io.
+
 ## Vue d’ensemble de l’architecture
 
 ![Architecture du laboratoire CloudTrail avec Floci](docs/images/architecture-floci.png)
