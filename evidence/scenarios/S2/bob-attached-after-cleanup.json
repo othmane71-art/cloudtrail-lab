@@ -1,0 +1,8 @@
+{
+    "AttachedPolicies": [
+        {
+            "PolicyName": "DevPolicy",
+            "PolicyArn": "arn:aws:iam::000000000000:policy/DevPolicy"
+        }
+    ]
+}

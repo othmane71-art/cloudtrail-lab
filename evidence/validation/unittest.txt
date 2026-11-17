@@ -1,0 +1,11 @@
+test_deterministic (test_pipeline.PipelineTest.test_deterministic) ... ok
+test_every_scenario_detected_at_least_high (test_pipeline.PipelineTest.test_every_scenario_detected_at_least_high) ... ok
+test_log_gap_detected (test_pipeline.PipelineTest.test_log_gap_detected) ... ok
+test_no_decoy_above_medium (test_pipeline.PipelineTest.test_no_decoy_above_medium) ... ok
+test_no_event_inside_logging_gap (test_pipeline.PipelineTest.test_no_event_inside_logging_gap) ... ok
+test_records_have_cloudtrail_core_fields (test_pipeline.PipelineTest.test_records_have_cloudtrail_core_fields) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.118s
+
+OK

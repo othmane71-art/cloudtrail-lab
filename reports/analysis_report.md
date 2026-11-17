@@ -7,7 +7,7 @@
 - Fichiers lus : 114 (illisibles : 0)
 - Événements uniques analysés : **265**
 - Période couverte : 2026-10-28T06:03:00Z -> 2026-10-29T05:51:17Z
-- Plages IP de confiance : `198.51.100.0/24,10.0.0.0/8` | seuil de silence : 30 min
+- Plages IP de confiance : `198.51.100.0/24,10.0.0.0/8` | seuil de silence : 15 min
 
 ## 2. Synthèse des alertes
 
